@@ -611,7 +611,7 @@
 <p><img src="../images/pic/codeql1.png"></p>
 <p>CodeQL 自己定义实现了一套名为 QL 的查询语言，并提供了相应的支持库和运行环境。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>分析程序支持主流的操作系统,Windows,Mac,Linux</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir codeql-home</span><br><span class="line">cd codeql</span><br><span class="line">mkdir codeql-cli</span><br><span class="line">cd codeql-cli</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://github.com/github/codeql-cli-binaries</span></span><br><span class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/github/</span>codeql-cli-binaries<span class="regexp">/releases/</span>download<span class="regexp">/v2.7.5/</span>codeql-osx64.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir codeql-home</span><br><span class="line">cd codeql-home</span><br><span class="line">mkdir codeql-cli</span><br><span class="line">cd codeql-cli</span><br><span class="line"></span><br><span class="line"><span class="comment">#https://github.com/github/codeql-cli-binaries</span></span><br><span class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/github/</span>codeql-cli-binaries<span class="regexp">/releases/</span>download<span class="regexp">/v2.9.3/</span>codeql-linux64.zip</span><br></pre></td></tr></table></figure>
 
 <p>解压之后添加到环境变量</p>
 <p>然后下载lib</p>
@@ -628,7 +628,7 @@
 
 
 <h2 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h2><p>以java-sec-code为例</p>
-<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">[shadowflow@ShadowOS query]$ git clone htt<span class="symbol">ps:</span>//github.com/JoyChou93/java-<span class="built_in">sec</span>-code.git</span><br><span class="line">[shadowflow@ShadowOS query]$ cd java-<span class="built_in">sec</span>-<span class="built_in">code</span></span><br><span class="line">[shadowflow@ShadowOS java-<span class="built_in">sec</span>-<span class="built_in">code</span>]$ mkdir java-<span class="built_in">sec</span>-<span class="built_in">code</span>-qldb</span><br><span class="line">[shadowflow@ShadowOS java-<span class="built_in">sec</span>-<span class="built_in">code</span>]$ codeql database create java-<span class="built_in">sec</span>-<span class="built_in">code</span>-qldb -l java</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">[shadowflow@ShadowOS query]$ git clone htt<span class="symbol">ps:</span>//github.com/JoyChou93/java-<span class="built_in">sec</span>-code.git</span><br><span class="line">[shadowflow@ShadowOS query]$ cd java-<span class="built_in">sec</span>-<span class="built_in">code</span></span><br><span class="line">[shadowflow@ShadowOS java-<span class="built_in">sec</span>-<span class="built_in">code</span>]$ mkdir java-<span class="built_in">sec</span>-<span class="built_in">code</span>-qldb</span><br><span class="line">[shadowflow@ShadowOS java-<span class="built_in">sec</span>-<span class="built_in">code</span>]$ codeql database create java-<span class="built_in">sec</span>-<span class="built_in">code</span>-qldb -l java --command=<span class="string">&quot;mvn clean install -Dmaven.test.skip=true&quot;</span> --overwrite</span><br></pre></td></tr></table></figure>
 
 <p>打开codeql扩展，添加生成的db</p>
 <img src="../images/pic/codeql4.jpg" style="zoom:50%;" /> 
@@ -3151,7 +3151,7 @@
     <content><![CDATA[<p>gRPC入门案例</p>
 <span id="more"></span>
 
-<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><h3 id="1-1-golang配置"><a href="#1-1-golang配置" class="headerlink" title="1.1 golang配置"></a>1.1 golang配置</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Golang</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GO_HOME</span>=/usr/local/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GOPATH</span>=/root/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$GO_HOME</span>/bin:$GOPATH/bin:$PATH</span><br></pre></td></tr></table></figure>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><h3 id="1-1-golang配置"><a href="#1-1-golang配置" class="headerlink" title="1.1 golang配置"></a>1.1 golang配置</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Golang</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GOROOT</span>=/usr/local/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GOPATH</span>=<span class="variable">$HOME</span>/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$GOROOT/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure>
 
 
 
@@ -3230,8 +3230,8 @@
         <category>Code</category>
       </categories>
       <tags>
-        <tag>GO</tag>
-        <tag>gRPC</tag>
+        <tag>Golang</tag>
+        <tag>Code</tag>
       </tags>
   </entry>
   <entry>
@@ -5073,7 +5073,7 @@
 <p>最终效果</p>
 <p><img src="../images/pic/zhongduan5.jpg"></p>
 <h3 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h3><p>.zshrc设置代理快捷命令</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#终端设置代理</span></span><br><span class="line"><span class="comment">#polipo proxy on/off</span></span><br><span class="line"></span><br><span class="line">function proxysockes_on()&#123;</span><br><span class="line">	#配置http访问</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">http_proxy</span>=socks5://172.16.42.1:1086</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">https_proxy</span>=socks5://172.16.42.1:1086</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">all_proxy</span>=socks5://172.16.42.1:1086</span><br><span class="line">	echo <span class="string">&#x27;**************开启当前终端socks5代理**************&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function proxyhttp_on()&#123;</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">http_proxy</span>=http://172.16.42.1:1087</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">https_proxy</span>=http://172.16.42.1:1087</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">all_proxy</span>=http://172.16.42.1:1087</span><br><span class="line">	echo <span class="string">&#x27;*************开启当前终端http代理**************&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function proxy_off()&#123;</span><br><span class="line">	#移除代理</span><br><span class="line">	unset http_proxy</span><br><span class="line">	unset https_proxy</span><br><span class="line">	unset all_proxy</span><br><span class="line">	echo <span class="string">&#x27;************关闭当前终端代理***********&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#终端设置代理</span></span><br><span class="line"><span class="comment">#polipo proxy on/off</span></span><br><span class="line"></span><br><span class="line">function proxysockes_on()&#123;</span><br><span class="line">	#配置http访问</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">http_proxy</span>=socks5://172.16.42.2:1086</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">https_proxy</span>=socks5://172.16.42.2:1086</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">all_proxy</span>=socks5://172.16.42.2:1086</span><br><span class="line">	echo <span class="string">&#x27;**************开启当前终端socks5代理**************&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function proxyhttp_on()&#123;</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">http_proxy</span>=http://172.16.42.2:1087</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">https_proxy</span>=http://172.16.42.2:1087</span><br><span class="line">	<span class="builtin-name">export</span> <span class="attribute">all_proxy</span>=http://172.16.42.2:1087</span><br><span class="line">	echo <span class="string">&#x27;*************开启当前终端http代理**************&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function proxy_off()&#123;</span><br><span class="line">	#移除代理</span><br><span class="line">	unset http_proxy</span><br><span class="line">	unset https_proxy</span><br><span class="line">	unset all_proxy</span><br><span class="line">	echo <span class="string">&#x27;************关闭当前终端代理***********&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>proxysockes_on命令开始socks5代理</p>
 <p>proxyhttp_on命令开启http代理</p>
@@ -5124,7 +5124,7 @@
 
 
 <h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><p>环境变量</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Golang</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">MAVEN_HOME</span>=/Users/shadowflow/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$MAVEN_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Golang</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GOROOT</span>=/usr/local/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">GOPATH</span>=<span class="variable">$HOME</span>/go</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$GOROOT/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure>
 
 
 
